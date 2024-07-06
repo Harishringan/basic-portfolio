@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARISHRINGAN K</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: purple;
+            color: black;
+        }
+
+        header {
+            background-color: #0a0a0a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1{
+            margin: 0;
+        }
+        span{
+            color: aqua;
+        }
+        nav {
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: border-box;
+            background-color:rgb(107, 105, 105);
+            width: auto;
+            PADDING: 10px;
+            border-radius: 8px;
+            font-size: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 16px;
+            border-radius: 15px;
+            box-shadow: BORDER-BOX;
+            background-color: #8f8d8d;
+            padding: 5px;
+        }
+        
+
+        nav a:hover {
+            color: #0d0d0e;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            padding-bottom: 50px;
+            background-color: whitesmoke;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section:hover{
+            background-color: pink ;
+        }
+
+        h2 {
+            color:red;
+        }
+        h3{
+            color: rgb(7, 67, 247);
+        }
+        h4{
+            color: royalblue;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .project h3 {
+            color: #007bff;
+        }
+        .move{
+            
+            margin-left: 40%;
+        }
+        .color{
+            color: #007bff;
+        }
+        #colorss{
+            color: red;
+            margin-left: 45%;
+        }
+#colors{
+    color: rgb(243, 242, 242);
+    
+    margin-left: 18%;
+}
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: aqua;
+            color: #fff;
+            border: none;
+            box-shadow:aqua;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease-in-out;
+        
+        }
+
+    
+        #contactModal p{
+            text-align: center;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .skill-container {
+            position: relative;
+            width: 120px; /* Adjust width */
+            height: 120px; /* Adjust height */
+            margin: 10px;
+        }
+
+        .skill {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff; /* Text color for percentage */
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333; /* Text color for percentage */
+            font-size: 24px; /* Adjust font size */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .skill:hover .percent {
+            opacity: 1;
+        }
+
+        /* Gradient colors for skills */
+        .skill[data-percent="90"] {
+            background: radial-gradient(circle, #44a08d, #093637);
+        }
+
+        .skill[data-percent="80"] {
+            background: radial-gradient(circle, #426a5a, #191713);
+        }
+
+        .skill[data-percent="75"] {
+            background: radial-gradient(circle, #3e5b4b, #171a18);
+        }
+
+        .skill[data-percent="65"] {
+            background: radial-gradient(circle, #3b4b3e, #131813);
+        }
+
+        .skill[data-percent="70"] {
+            background: radial-gradient(circle, #374c41, #131a15);
+        }
+
+        .skill[data-percent="65"] {
+            background: radial-gradient(circle, #334c37, #141b13);
+        }
+
+        /* CSS for programming language names */
+        .skill-name {
+            position: absolute;
+            bottom: -30px; /* Adjust position */
+            width: 100%;
+            text-align: center;
+            color: #333;
+            font-size: 14px; /* Adjust font size */
+            font-weight: bold;
+        }
+        .skill::after {
+            content: attr(data-percent) "%";
+            position: absolute;
+            font-size: 30px; /* Adjust font size */
+            color: #f5f5f5; /* Text color for percentage */
+
+        }
+        
+
+        #contact form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact input[type="tel"],
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        #contact input[type="submit"] {
+            background-color: aqua;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact input[type="submit"]:hover {
+            
+            background-color: #00b3a4;
+            box-shadow: 0PX 0PX 50PX aqua;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <b>MY PERSONAL PORTFOLIO</b>
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#education">My Education</a>
+            <a href="#projects">My Projects</a>
+            <a href="#skills">My Skills</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+        
+    </header>
+    <div >
+        <h1 class="move">HI , I'M <span class="color">HARISHRINGAN K</span></h1>
+        <h3 id="colorss">Front-End Developer</h3>
+        <h3 id="colors">
+            Hi there, I'm interested IT industry and i want to be a part of developing new technology. I'm more interested in full stack domain.
+        </h3>
+        <div class="icon">
+            <a href="#"><box-icon type='logo' name='facebook'></box-icon></a>
+            <a href="#"><box-icon name='instagram-alt' type='logo' ></box-icon></a>
+            <a href="#"><box-icon name='linkedin' type='logo' ></box-icon></a>
+        </div>
+        <div class="img">
+                <img src="images/my pic.jpeg" alt="">
+        </div>
+        
+    </div>
+    <section id="about">
+        <h2>About Me</h2>
+        
+        <p>
+            I am HARISHRINGAN K, a highly motivated individual, currently pursuing my pre-final year in Electronics and communicaton department. As I approach the threshold of my academic journey, I am eager to leverage my passion for technology and IT expertise to make a significant impact in the industry. I take pride in being an effective team player with decent communication and interpersonal abilities, and I am excited to contribute my energy and enthusiasm to collaborative projects. Seeking entry-level position for growth and development.
+        </p>
+    </section>
+
+    
+    <section id = "education">
+        <h2>My Education</h2>
+        <h3>2018-2019</h3>
+        <h4>Secondary Education</h4>
+        <p>Sethu Bhaskara Matriculation Higher Secondary School</p>
+        <p>State Board</p>
+        <p>percentage : 73.6%</p>
+        <h3>2020-2021</h3>
+        <h4>Higher Secondary Education</h4>
+        <p>Sethu Bhaskara Matriculation Higher Secondary School</p>
+        <p>State Board</p>
+        <p>percentage : 80.0%</p>
+        <h4>Bachelor Of Education</h4>
+        <p>S.A.Engineering College</p>
+        <p>Department : Electronics And Communicaton Engineering</p>
+        <p>CGPA : 8.372</p>
+
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project">
+            <h3>MY PERSONAL PORTFOLIO</h3>
+            <h4>THIS PROJECT HAD BEEN HOSTED</H4>
+            <p>I have created my portfolio with HTML and CSS,which describes about myself with some features like about me,skills,projects,contact details.</p>
+        </div>
+
+        <div class="project">
+            <h3>DOOR LOCK SYSTEM WITH VOICE CONTROL USING NODEMCU ESP8266</h3>
+            <h4>THIS PROJECT HAD BEEN PUBLISHED IN IEEE CONFERENCE WHICH WAS HELD AT VELAMMAL INSTITUTE OF TECHNOLOGY CHENNAI</H4>
+            <p>It is an system which is based on automatic door lock and voice control home automation which is proposed to improvethe security features , eventhough the product is available in the market, i developed this for lower which will be very much useful for all the peoples and cost efficient. The code is used for the project C programming language complied and uploaded using Arduino IDE software for implementation purpose.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul class="skills">
+            <!-- Add data-percent attribute to represent skill percentage -->
+            <li class="skill-container">
+                <div class="skill" data-percent="90">
+                    <div class="percent">90%</div>
+                </div>
+                <span class="skill-name">C </span>
+            </li>
+            <li class="skill-container">
+                <div class="skill" data-percent="80">
+                    <div class="percent">80%</div>
+                </div>
+                <span class="skill-name">HTML</span>
+            </li>
+            <li class="skill-container">
+                <div class="skill" data-percent="75">
+                    <div class="percent">75%</div>
+                </div>
+                <span class="skill-name">CSS</span>
+            </li>
+            <li class="skill-container">
+                <div class="skill" data-percent="65">
+                    <div class="percent">85%</div>
+                </div>
+                <span class="skill-name">JavaScript</span>
+            </li>
+            <li class="skill-container">
+                <div class="skill" data-percent="70">
+                    <div class="percent">70%</div>
+                </div>
+                <span class="skill-name">Python</span>
+            </li>
+            <li class="skill-container">
+                <div class="skill" data-percent="65">
+                    <div class="percent">65%</div>
+                </div>
+                <span class="skill-name">Java</span>
+            </li>
+        </ul>
+    </section>
+
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="message" rows="5" placeholder="Regarding"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HARISHRINGAN K | Contact: harishringan03@gmail.com | GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
+    </footer>
+</body>
+
+<!-- ... (your existing HTML code) ... -->
+<head>
+    <!-- ... (your existing meta tags and title) ... -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Contact Me modal
+            const contactButton = document.getElementById('contactButton');
+            const modal = document.getElementById('contactModal');
+            const closeBtn = document.getElementById('closeBtn');
+
+            contactButton.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent default form submission
+                
+                // You can handle the form submission here, for example:
+                // 1. Collect form data
+                const formData = new FormData(contactForm);
+                
+                // 2. Convert form data to JSON
+                const jsonData = {};
+                formData.forEach((value, key) => {
+                    jsonData[key] = value;
+                });
+
+                // 3. Send the form data to the server using AJAX, fetch API, etc.
+                console.log(jsonData);
+                
+                // For demonstration, let's just display a success message
+                alert("Message sent successfully!");
+                
+                // You can clear the form fields here if needed
+                contactForm.reset();
+            });
+        });
+    </script>
+</head>
+<!-- ... (your existing HTML code) ... -->
+
+<!-- Add this button inside the <section id="contact"> -->
+
+
+<!-- Add this modal at the end of the body -->
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span id="closeBtn" class="close">&times;</span>
+        <p>Feel free to reach out to me at harishringan03@gmail.com</p>
+    </div>
+</div>
+
+</html>
